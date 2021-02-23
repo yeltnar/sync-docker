@@ -11,4 +11,4 @@ piip(){
 	echo $pi_ip
 }
 
-clear && date && rsync -a -e 'ssh -p 23' pi@$(piip):'/media/pi/TOSHIBA\ EXT/phone/Tasker' $(pwd) && date
+rsync -a -e 'ssh -p 23 -o StrictHostKeyChecking=no' pi@$(piip):'/media/pi/TOSHIBA\ EXT/phone/Tasker' $(pwd)

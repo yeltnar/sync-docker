@@ -1,5 +1,7 @@
 FROM ubuntu:18.04
 
+WORKDIR /workdir
+
 RUN apt-get update
 RUN apt-get install rsync -y
 RUN apt-get install openssh-client -y 
@@ -14,7 +16,4 @@ COPY ./gitignore /root/gist/gitignore
 COPY sync.sh ./
 COPY ./.ssh /root/.ssh
 
-WORKDIR /workdir
-
-CMD tail -f /dev/null
-# CMD ls ~/gist/gitignore
+CMD /workdir/sync.sh
