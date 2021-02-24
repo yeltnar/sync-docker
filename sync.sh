@@ -11,4 +11,4 @@ piip(){
 	echo $pi_ip
 }
 
-rsync -a -e 'ssh -p 23 -o StrictHostKeyChecking=no' pi@$(piip):'/media/pi/TOSHIBA\ EXT/phone/Tasker' $(pwd)
+rsync -a -e 'ssh -p 23 -o StrictHostKeyChecking=no' pi@$(piip):'/media/pi/TOSHIBA\ EXT/phone/Tasker' /syncfolder
